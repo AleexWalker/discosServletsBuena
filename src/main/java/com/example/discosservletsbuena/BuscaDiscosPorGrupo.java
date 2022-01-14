@@ -1,5 +1,7 @@
 package com.example.discosservletsbuena;
 
+import com.example.discosservletsbuena.controlador.GestorConsultas;
+
 import java.io.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -7,6 +9,7 @@ import javax.servlet.annotation.*;
 @WebServlet(name = "buscaDiscosPorGrupo", value = "/busca-discos-por-grupo")
 public class BuscaDiscosPorGrupo extends HttpServlet {
     private String mensaje = "Formulario Para Buscar Autor";
+    private GestorConsultas gestor;
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
@@ -22,7 +25,7 @@ public class BuscaDiscosPorGrupo extends HttpServlet {
                         out.println("<form action=\"\" RequestParamExample\" method=\"POST\">");
                         out.println("Escriba el nombre del autor:");
                         out.println("<input type=text size=20 name=firstname>");
-                        out.println("<input type=submit text=BUSCAR>");
+                        out.println("<input type=submit value=\"BUSCAR\" onclick=\"\">");
                         out.println("<br>");
                         out.println("<a href=\"../discosServletsBuena_war_exploded/\">Volver al Inicio</a>");
                 out.println("</div>");
